@@ -32,9 +32,10 @@ jobs:
 
       - name: init env file
         run: |
+          cd fullstack-app
           touch .env
           cat sample.env >> .env
 
       - name: test code
         run: |
-          just test
+          cd fullstack-app && just test
