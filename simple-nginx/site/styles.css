@@ -1,0 +1,25 @@
+html {
+    line-height: 1.5;
+    font-size: 1.25em;
+    background-color: rgb(39, 39, 37);
+    color: white;
+    height: 100%;
+    font-family: "aktiv-grotesk-std",sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
+}
+
+.flexbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.world {
+    font-size: 2rem;
+}
