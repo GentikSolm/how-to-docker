@@ -1,0 +1,41 @@
+name: App CI
+on:
+  pull_request:
+    types: [assigned, opened, edited, synchronize, reopened]
+    branches:
+      - 'stage'
+      - 'main'
+
+jobs:
+  CI:
+    if: (github.actor != 'dependabot[bot]') && (contains(github.head_ref, 'dependabot/') == false) && (contains(github.head_ref, 'skip-release/') == false)
+    name: Test Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: setup docker compose
+        uses: KengoTODA/actions-setup-docker-compose@main
+        with:
+          version: '2.12.2'
+
+      - name: Expose GitHub Runtime
+        uses: crazy-max/ghaction-github-runtime@v2
+
+      - name: setup just
+        uses: extractions/setup-just@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: init env file
+        run: |
+          cd fullstack-app
+          touch .env
+          cat sample.env >> .env
+
+      - name: test code
+        run: |
+          cd fullstack-app && just test
