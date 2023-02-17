@@ -1,7 +1,7 @@
 # How To Docker
 
 This is a template / reference repo for adding docker to projects.
-I made this for a presentation to my university's Senior Seminar class,
+I made this for a presentation for my university's Senior Seminar class,
 where students are building some really cool, semester long projects.
 
 ## Presentation
