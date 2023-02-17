@@ -1,0 +1,16 @@
+# List defaults
+default:
+    @just --list
+
+build:
+    @docker compose build
+
+up: build
+    @docker compose up -d
+
+down:
+    @docker compose down
+
+# Runs all tests
+test: build
+    @docker compose run app yarn lint
