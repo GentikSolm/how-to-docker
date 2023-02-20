@@ -1,6 +1,11 @@
 ---
 author: Josh Brown
 ---
+# Docker
+
+- By Josh Brown
+
+---
 # Notes on projects
 ## Folder Structure
 
@@ -69,8 +74,7 @@ Want SSR / non SPA?
     - Full OS
     - Slow startup time
     - Can run multiple OS's simultaneously
-``` 
-```
+
 - Bare metal
     - Polluted environment
     - Dependency management nightmare
@@ -83,6 +87,22 @@ Want SSR / non SPA?
 - Can be used on all OS's 
     - Fastest on linux
 - Speed up development 10x
+
+---
+# The Dockerfile
+Before making a dockerfile, first you should make a `.dockerignore`. This is basically your .gitignore
+but for the image, instead of source control.
+
+
+# Quick Terminology
+- Docker
+  - The ecosystem as a whole, all parts of docker.
+- Image
+  - The immutable template that defines how a container will start
+- Container
+  - An actual instance of an image
+- Volume
+  - A mapped file space for a container to use
 
 ---
 # The Dockerfile
@@ -185,16 +205,6 @@ For a much more complex dockerfile for node, see fullstack-app's Dockerfile
 - Still use the cli to control docker-compose
 - docker-compose controls the specifics of the containers
 - docker-compose cli controls starting, stopping, restarting, etc. of containers
-
-# Quick Terminology
-- Docker
-  - The ecosystem as a whole, all parts of docker.
-- Image
-  - The immutable template that defines how a container will start
-- Container
-  - An actual instance of an image
-- Volume
-  - A mapped file space for a container to use
 
 ---
 # Docker Compose
