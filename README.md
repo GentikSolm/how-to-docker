@@ -1,5 +1,7 @@
 # How To Docker
 
+![](./docker.gif)
+
 This is a template / reference repo for adding docker to projects.
 I made this for a presentation for my university's Senior Seminar class,
 where students are building some really cool, semester long projects.
