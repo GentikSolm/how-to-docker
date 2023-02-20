@@ -14,3 +14,6 @@ down:
 # Runs all tests
 test: build
     @docker compose run app yarn lint
+
+logs:
+    @docker compose logs -f

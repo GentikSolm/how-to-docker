@@ -3,12 +3,10 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./Dockerfile
       target: dev
     ports:
       - '80:5000'
     volumes:
       - .:/app
-    restart: unless-stopped
     env_file:
       - .env
